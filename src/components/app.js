@@ -41,18 +41,36 @@ class App extends React.Component {
     // console.log(fileName("D:/Downloads"));
     return (
       <div className="container">
-
         <DropDown />
 
-        <table className="ui inverted blue table" style={{ textAlign: "center" }}>
+        <table
+          className="ui inverted blue table"
+          style={{ textAlign: "center" }}
+        >
           <thead>
             <tr>
-              <th style={{ textTransform: "uppercase" }} onClick={() => this.onClickedSort("company")}>Company</th>
-              <th style={{ textTransform: "uppercase" }} onClick={() => this.onClickedSort("stockPrice")}>
+              <th
+                style={{ textTransform: "uppercase" }}
+                onClick={() => this.onClickedSort("company")}
+              >
+                Company
+              </th>
+              <th
+                style={{ textTransform: "uppercase" }}
+                onClick={() => this.onClickedSort("stockPrice")}
+              >
                 Stock Price
               </th>
-              <th style={{ textTransform: "uppercase" }} onClick={() => this.onClickedSort("ticker")}>Ticker</th>
-              <th style={{ textTransform: "uppercase" }} onClick={() => this.onClickedSort("timeElapsed")}>
+              <th
+                style={{ textTransform: "uppercase" }}
+                onClick={() => this.onClickedSort("ticker")}
+              >
+                Ticker
+              </th>
+              <th
+                style={{ textTransform: "uppercase" }}
+                onClick={() => this.onClickedSort("timeElapsed")}
+              >
                 Time Elapsed
               </th>
             </tr>
