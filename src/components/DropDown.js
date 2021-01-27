@@ -14,11 +14,14 @@ class DropDown extends React.Component {
       fileLists: await (await fileList()).data,
     });
   };
-
-  dropDownList = () => {
+  handleChange = (file) => {
+    console.log(file.target.value);
+  };
+  componentDidMount() {
     this.stateFunc();
+  }
+  dropDownList = () => {
     return this.state.fileLists.map((file, key) => {
-      console.log(file);
       return (
         <option value={file} key={key}>
           {file}
@@ -30,10 +33,13 @@ class DropDown extends React.Component {
   render() {
     return (
       <div className="ui action input">
-        <select className="ui compact selection dropdown">
+        <select
+          className="ui compact selection dropdown"
+          onChange={this.handleChange}
+        >
           {this.dropDownList()}
         </select>
-        <div className="ui inverted red button">Search</div>
+        {/* <div className="ui inverted red button">Search</div> */}
       </div>
     );
   }

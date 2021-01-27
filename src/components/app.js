@@ -44,7 +44,7 @@ class App extends React.Component {
         <DropDown />
 
         <table
-          className="ui inverted blue table"
+          className="ui celled structured inverted blue table"
           style={{ textAlign: "center" }}
         >
           <thead>

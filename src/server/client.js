@@ -5,7 +5,7 @@ const port = 8080;
 const fs = require("fs");
 
 const getFileNames = async (dir) => {
-  return await fs.readdirSync("D:\\Downloads");
+  return await fs.readdirSync("D:\\Personal\\desktop\\work\\trial\\src\\Data");
 };
 
 app.get("/", cors(), (req, res) => {
