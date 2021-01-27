@@ -8,3 +8,5 @@ export const compare = (prop) => {
     return 0;
   };
 };
+
+export const fileName = "../Data/data";

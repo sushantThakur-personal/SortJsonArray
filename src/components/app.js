@@ -1,9 +1,14 @@
 import React from "react";
 
 // import { fileName } from "../tools/fileSearch";
-import { stockData } from "../Data/data";
+
+// import fileImport from "../tools/fileImport";
+// import { fileName } from "../tools/sortArray";
+
 import { compare } from "../tools/sortArray";
 import DropDown from "./DropDown";
+// import fileImport from "../tools/fileImport";
+import { stockData } from "../Data/data - Copy";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +17,9 @@ class App extends React.Component {
       sorter: "",
     };
   }
+
   sortedStocks = (sorter) => {
+    // console.log(fileImport);
     return stockData.sort(compare(sorter)).map((data, key) => {
       return (
         <tr className="row" key={key}>
