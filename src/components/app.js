@@ -2,7 +2,7 @@ import React from "react";
 
 import { compare } from "../tools/sortArray";
 import DropDown from "./DropDown";
-// import { stockData } from "../Data/data - Copy";
+
 import { filedata } from "../tools/fileSearch";
 
 class App extends React.Component {
@@ -45,46 +45,55 @@ class App extends React.Component {
     });
   };
   render() {
-    return (
-      <div className="container">
-        <DropDown onChange={this.handleChange} />
+    if (this.state.data.length === 0) {
+      return (
+        <div>
+          <DropDown onChange={this.handleChange} />
+          <h1 style={{ color: "white" }}>Please make a selection</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div className="container">
+          <DropDown onChange={this.handleChange} />
 
-        <table
-          className="ui celled structured inverted blue table"
-          style={{ textAlign: "center" }}
-        >
-          <thead>
-            <tr>
-              <th
-                style={{ textTransform: "uppercase" }}
-                onClick={() => this.onClickedSort("company")}
-              >
-                Company
-              </th>
-              <th
-                style={{ textTransform: "uppercase" }}
-                onClick={() => this.onClickedSort("stockPrice")}
-              >
-                Stock Price
-              </th>
-              <th
-                style={{ textTransform: "uppercase" }}
-                onClick={() => this.onClickedSort("ticker")}
-              >
-                Ticker
-              </th>
-              <th
-                style={{ textTransform: "uppercase" }}
-                onClick={() => this.onClickedSort("timeElapsed")}
-              >
-                Time Elapsed
-              </th>
-            </tr>
-          </thead>
-          <tbody>{this.sortedStocks(this.state.sorter)}</tbody>
-        </table>
-      </div>
-    );
+          <table
+            className="ui celled structured inverted blue table"
+            style={{ textAlign: "center" }}
+          >
+            <thead>
+              <tr>
+                <th
+                  style={{ textTransform: "uppercase" }}
+                  onClick={() => this.onClickedSort("company")}
+                >
+                  Company
+                </th>
+                <th
+                  style={{ textTransform: "uppercase" }}
+                  onClick={() => this.onClickedSort("stockPrice")}
+                >
+                  Stock Price
+                </th>
+                <th
+                  style={{ textTransform: "uppercase" }}
+                  onClick={() => this.onClickedSort("ticker")}
+                >
+                  Ticker
+                </th>
+                <th
+                  style={{ textTransform: "uppercase" }}
+                  onClick={() => this.onClickedSort("timeElapsed")}
+                >
+                  Time Elapsed
+                </th>
+              </tr>
+            </thead>
+            <tbody>{this.sortedStocks(this.state.sorter)}</tbody>
+          </table>
+        </div>
+      );
+    }
   }
 }
 

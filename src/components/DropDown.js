@@ -1,5 +1,5 @@
 import React from "react";
-import { fileList, filedata } from "../tools/fileSearch";
+import { fileList } from "../tools/fileSearch";
 
 class DropDown extends React.Component {
   constructor(props) {
@@ -35,6 +35,7 @@ class DropDown extends React.Component {
           className="ui compact selection dropdown"
           onChange={this.props.onChange}
         >
+          <option>--Please Select--</option>
           {this.dropDownList()}
         </select>
         {/* <div className="ui inverted red button">Search</div> */}

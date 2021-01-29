@@ -1,0 +1,40 @@
+{ 
+  "stockData": [
+  {
+    "company": "Reliance Inc",
+    "ticker": "REL",
+    "stockPrice": 222.76,
+    "timeElapsed": "55 sec ago"
+  },
+  {
+    "company": "TATA Inc",
+    "ticker": "TATA",
+    "stockPrice": 550.28,
+    "timeElapsed": "10 sec ago"
+  },
+  {
+    "company": "Hinduja global",
+    "ticker": "HDG",
+    "stockPrice": 3410.79,
+    "timeElapsed": "35 sec ago"
+  },
+  {
+    "company": "Adani Group",
+    "ticker": "ADN",
+    "stockPrice": 129.87,
+    "timeElapsed": "45 sec ago"
+  },
+  {
+    "company": "Maruti",
+    "ticker": "MAR",
+    "stockPrice": 6000.99,
+    "timeElapsed": "10 sec ago"
+  },
+  {
+    "company": "Steel Authority of India Limited",
+    "ticker": "SAIL",
+    "stockPrice": 56.22,
+    "timeElapsed": "12 sec ago"
+  }
+]
+}
