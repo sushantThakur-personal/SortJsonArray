@@ -15,7 +15,7 @@ class DropDown extends React.Component {
     });
   };
   handleChange = (file) => {
-    console.log(file.target.value);
+    return file.target.value
   };
   componentDidMount() {
     this.stateFunc();

@@ -52,3 +52,8 @@ export const fileList = () => {
 //   });
 
 // };
+
+
+export const filedata = (datapoint) => {
+  return axios.get("http://localhost:8080/" + `${datapoint}`);
+}
