@@ -6,6 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `cd src/server`
+**use this to start the express server**
+start the express server and change the path as per your project folder
+const folder =
+  {absolute path to your project directory}\\src\\Data";
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
