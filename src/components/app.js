@@ -2,18 +2,20 @@ import React from "react";
 
 import { compare } from "../tools/sortArray";
 import DropDown from "./DropDown";
-import { stockData } from "../Data/data - Copy";
+// import { stockData } from "../Data/data - Copy";
+import { filedata } from "../tools/fileSearch";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       sorter: "",
+      data: [],
     };
   }
 
   sortedStocks = (sorter) => {
-    return stockData.sort(compare(sorter)).map((data, key) => {
+    return this.state.data.sort(compare(sorter)).map((data, key) => {
       return (
         <tr className="row" key={key}>
           <td className="field" data-label="Company">
@@ -37,10 +39,15 @@ class App extends React.Component {
       sorter: sort,
     });
   };
+  handleChange = async (file) => {
+    this.setState({
+      data: await (await filedata(file.target.value)).data,
+    });
+  };
   render() {
     return (
       <div className="container">
-        <DropDown />
+        <DropDown onChange={this.handleChange} />
 
         <table
           className="ui celled structured inverted blue table"

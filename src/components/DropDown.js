@@ -1,5 +1,5 @@
 import React from "react";
-import { fileList } from "../tools/fileSearch";
+import { fileList, filedata } from "../tools/fileSearch";
 
 class DropDown extends React.Component {
   constructor(props) {
@@ -14,9 +14,7 @@ class DropDown extends React.Component {
       fileLists: await (await fileList()).data,
     });
   };
-  handleChange = (file) => {
-    return file.target.value
-  };
+
   componentDidMount() {
     this.stateFunc();
   }
@@ -35,7 +33,7 @@ class DropDown extends React.Component {
       <div className="ui action input">
         <select
           className="ui compact selection dropdown"
-          onChange={this.handleChange}
+          onChange={this.props.onChange}
         >
           {this.dropDownList()}
         </select>

@@ -30,9 +30,9 @@ app.get("/:data", cors(), (req, res) => {
     // var dataFromfile = await getFileData(req.params.data);
     // console.log(dataFromfile);
     let stockData = JSON.parse(
-      fs.readFileSync(folder + "\\" + req.params.data + ".json")
+      fs.readFileSync(folder + "\\" + req.params.data)
     );
-    res.send(stockData);
+    res.send(stockData.stockData);
   })();
 });
 
