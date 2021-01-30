@@ -4,8 +4,8 @@ const cors = require("cors");
 const port = 8080;
 const fs = require("fs");
 const folder =
-  // "C:\\Users\\am660\\OneDrive\\Desktop\\pagetest\\SortJsonArray\\src\\Data";
-  "D:\\Personal\\desktop\\work\\trial\\src\\Data";
+  "C:\\Users\\am660\\OneDrive\\Desktop\\pagetest\\SortJsonArray\\src\\Data";
+// "D:\\Personal\\desktop\\work\\trial\\src\\Data";
 
 const getFileNames = async (dir) => {
   return await fs.readdirSync(folder);

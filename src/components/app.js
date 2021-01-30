@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       sorter: "",
       data: [],
+      releaseName: ""
     };
   }
 
@@ -42,12 +43,14 @@ class App extends React.Component {
   handleChange = async (file) => {
     this.setState({
       data: await (await filedata(file.target.value)).data,
+      releaseName: file.target.value
     });
   };
   render() {
     if (this.state.data.length === 0) {
       return (
         <div>
+          <h1 className="ui blue inverted header" style={{ textAlign: "center" }}>SINGLE USER PROFILING</h1>
           <DropDown onChange={this.handleChange} />
           <h1 style={{ color: "white" }}>Please make a selection</h1>
         </div>
@@ -55,8 +58,18 @@ class App extends React.Component {
     } else {
       return (
         <div className="container">
+          <h1 className="ui blue inverted header" style={{ textAlign: "center" }}>SINGLE USER PROFILING</h1>
           <DropDown onChange={this.handleChange} />
+          <br />
+          <div className="ui red inverted statistic">
 
+            <div className="label">
+              Drupal
+            </div>
+            <div className="value">
+              {this.state.releaseName.substring(0, this.state.releaseName.length - 5)}
+            </div>
+          </div>
           <table
             className="ui celled sortable structured inverted blue table"
             style={{ textAlign: "center" }}
