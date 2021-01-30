@@ -58,7 +58,7 @@ class App extends React.Component {
           <DropDown onChange={this.handleChange} />
 
           <table
-            className="ui celled structured inverted blue table"
+            className="ui celled sortable structured inverted blue table"
             style={{ textAlign: "center" }}
           >
             <thead>
