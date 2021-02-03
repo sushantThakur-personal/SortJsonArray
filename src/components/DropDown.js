@@ -22,7 +22,7 @@ class DropDown extends React.Component {
     return this.state.fileLists.map((file, key) => {
       return (
         <option value={file} key={key}>
-          {file}
+          {file.substring(0, file.length - 5)}
         </option>
       );
     });
